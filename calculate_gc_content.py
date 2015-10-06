@@ -34,8 +34,10 @@ with open(fasta, 'r') as fasta:
             elif base == "T":
                 t_count += 1
 
+total = a_count + c_count + g_count + t_count
+
 print("Base counts for file %s:" % fasta)
-print("A: %d" % a_count)
-print("C: %d" % c_count)
-print("G: %d" % g_count)
-print("T: %d" % t_count)
+print("A: %d\t%d%%" % (a_count, a_count*100.0/total))
+print("C: %d\t%d%%" % (c_count, c_count*100.0/total))
+print("G: %d\t%d%%" % (g_count, g_count*100.0/total))
+print("T: %d\t%d%%" % (t_count, t_count*100.0/total))
